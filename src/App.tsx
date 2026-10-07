@@ -1,10 +1,10 @@
 import { Header, Card, Footer } from './components';
-import { useTheme } from './context/theme/useTheme';
+import { useAppSelector } from './app/hooks';
 
 export function App() {
-  const { theme } = useTheme();
+  const mode = useAppSelector((state) => state.theme.mode);
   return (
-    <div className={`app app--${theme}`}>
+    <div className={`app app--${mode}`}>
       <Header />
 
       <main>

@@ -1,12 +1,12 @@
 import { memo } from 'react';
-import { useTheme } from '../../context/theme/useTheme';
+import { useAppSelector } from '../../app/hooks';
 
 export const Footer = memo(function Footer() {
-  const { theme } = useTheme();
+  const mode = useAppSelector((state) => state.theme.mode);
 
   return (
     <footer className="footer">
-      <small>Current theme: {theme}</small>
+      <small>Current theme: {mode}</small>
     </footer>
   );
 });
