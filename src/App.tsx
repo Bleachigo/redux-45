@@ -3,6 +3,7 @@ import { useAppSelector } from './app/hooks';
 
 export function App() {
   const mode = useAppSelector((state) => state.theme.mode);
+
   return (
     <div className={`app app--${mode}`}>
       <Header />
