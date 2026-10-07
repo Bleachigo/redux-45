@@ -7,7 +7,7 @@ export const Header = memo(function Header() {
 
   return (
     <header className="header">
-      <h1>Theme Context demo</h1>
+      <h1>Theme Redux demo</h1>
       <p>Current theme: {mode}</p>
 
       <ThemeToggle />
