@@ -1,12 +1,17 @@
-import { memo } from 'react';
-import { useTheme } from './useTheme';
+import { useAppDispatch, useAppSelector } from '../../app/hooks';
+import { themeToggled } from './themeSlice';
 
-export const ThemeToggle = memo(function ThemeToggle() {
-  const { theme, toggleTheme } = useTheme();
+export function ThemeToggle() {
+  const mode = useAppSelector((state) => state.theme.mode);
+  const dispatch = useAppDispatch();
 
   return (
-    <button type="button" className="toggler" onClick={toggleTheme}>
-      Switch to {theme === 'light' ? 'dark' : 'light'} theme
+    <button
+      type="button"
+      className="toggler"
+      onClick={() => dispatch(themeToggled())}
+    >
+      Current theme: {mode}
     </button>
   );
-});
+}
